@@ -1,5 +1,8 @@
 import React from "react";
 import Filter from "./Filter";
+import DashboardStats from "./DashboardStats";
+import PortfolioStats from "./PortfolioStats";
+import DCAStats from "./DCAStats";
 
 const PortfolioPage = () => {
   return (
@@ -8,6 +11,14 @@ const PortfolioPage = () => {
       <Filter />
 
       {/* portfolio */}
+      <div className="flex flex-col gap-4 grow justify-start items-start">
+        <DashboardStats />
+
+        <div className="flex flex-wrap gap-4 grow items-center">
+          <PortfolioStats />
+          <DCAStats />
+        </div>
+      </div>
     </div>
   );
 };

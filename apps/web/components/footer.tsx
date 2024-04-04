@@ -45,7 +45,7 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="fixed bottom-0 w-full flex justify-center items-center py-4 border-t border-white-50">
+    <div className="fixed bottom-0 w-full flex justify-center items-center py-4 border-t border-white-50 bg-black-100">
       <div className="flex flex-col lg:flex-row justify-between items-center grow max-w-[1200px]">
         <div className="flex flex-wrap items-center gap-8">
           <div className="flex items-center gap-2">

@@ -45,7 +45,7 @@ const Filter = () => {
           <DropdownMenuTrigger
             className={cn(
               aoenik_regular.className,
-              "py-3 px-4 flex items-center gap-2 outline-none ty-title backdrop-blur-[8px] bg-white-8 border border-white-16 rounded-lg uppercase"
+              "py-3 px-4 flex items-center gap-2 outline-none ty-title backdrop-blur-[8px] bg-white-8 border border-white-16 rounded-lg uppercase text-white-100"
             )}
           >
             {selectedToken} <ChevronDown size={16} />
