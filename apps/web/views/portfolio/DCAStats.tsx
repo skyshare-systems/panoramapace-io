@@ -10,9 +10,6 @@ const DCAStats = () => {
 
   const chartdata = {
     options: {
-      stroke: {
-        curve: "straight",
-      },
       chart: {
         // type: "line",
         toolbar: {
