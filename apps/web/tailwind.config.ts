@@ -1,13 +1,29 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss"
+
+const config = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./views/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    './views/**/*.{ts,tsx}',
+
+	],
+  prefix: "",
   theme: {
+    // container: {
+    //   center: true,
+    //   padding: "2rem",
+    //   screens: {
+    //     "2xl": "1400px",
+    //   },
+    // },
+
+   
+    
     extend: {
+
       screens: {
         xsm: "375px",
         sm: "640px",
@@ -57,7 +73,7 @@ module.exports = {
         },
 
         black:{
-          100:"#000000",
+          100:"#141414",
           80:"rgba(20, 20, 20, 0.80)",
           72:"rgba(20, 20, 20, 0.72)",
           50:"rgba(20, 20, 20, 0.50)",
@@ -92,7 +108,26 @@ module.exports = {
           4:"rgba(255, 119, 0, 0.04)"
         }
       },
+
+      
+     
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
+
+export default config

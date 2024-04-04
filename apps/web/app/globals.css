@@ -2,32 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  body {
+    @apply bg-black-100 text-white-100;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .gradient-text {
+    background: linear-gradient(
+      180deg,
+      #f4fafd 39.41%,
+      rgba(244, 250, 253, 0.5) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .ty-outline {
+    @apply font-normal text-[8.19px] leading-[120%];
+  }
+  .ty-subtext {
+    @apply font-normal text-[10.24px] leading-[120%];
+  }
+  .ty-subtitle {
+    @apply font-bold text-[12.80px] leading-[120%];
+  }
+  .ty-descriptions {
+    @apply font-normal text-[14px] leading-[120%];
+  }
+  .ty-title {
+    @apply font-bold text-[16px] leading-[120%];
+  }
+  .ty-subheading {
+    @apply font-normal text-[18px] leading-[120%];
+  }
+  .ty-h6 {
+    @apply font-bold text-[20px] leading-[120%];
+  }
+  .ty-h5 {
+    @apply font-bold text-[25px] leading-[120%];
+  }
+  .ty-h4 {
+    @apply font-bold text-[31.25px] leading-[120%];
+  }
+  .ty-h3 {
+    @apply font-bold text-[39.06px] leading-[120%];
+  }
+  .ty-h2 {
+    @apply font-normal text-[48.83px] leading-[120%];
+  }
+  .ty-h1 {
+    @apply font-normal text-[61.04px] leading-[120%];
+  }
+  .ty-display {
+    @apply font-normal text-[96px] leading-[120%];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+.button-gradient {
+  background: linear-gradient(180deg, #1d68f8 0%, #113d92 100%);
+}
+
+.button-gray-gradient {
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    180deg,
+    rgba(254, 254, 254, 0.04) 0%,
+    rgba(152, 152, 152, 0.04) 100%
+  );
+  backdrop-filter: blur(8px);
 }
