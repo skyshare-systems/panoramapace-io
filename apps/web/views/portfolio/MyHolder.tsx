@@ -190,7 +190,7 @@ const MyHolder = () => {
       amount: (
         <>
           <div className="flex flex-col">
-            <h1 className={cn(aoenik_regular.className, "text-white-100")}>
+            <h1 className={cn(aoenik_regular.className, "text-white-100 ")}>
               399.27
             </h1>
             <p className={cn(aoenik_regular.className, "text-white-50")}>
