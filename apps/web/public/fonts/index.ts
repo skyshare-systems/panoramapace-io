@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
 
-export const swansea = localFont({
+export const aoenik_regular = localFont({
   src: "./local/aeonik-regular.otf",
 });
