@@ -59,69 +59,42 @@ const PortfolioStats = () => {
     options: {
       legend: {
         show: false,
-        showMenu: false,
       },
-
       chart: {
         toolbar: {
           show: false,
+          type: "treemap",
         },
-        stroke: {
-          curve: "smooth",
-        },
-        color: "#151b1e",
-        stroke: "transparent",
-        borderColor: "!transparent",
-        type: "treemap",
       },
-      // title: {
-      //   text: "Treemap with Color scale",
+
+      formatter: function (text: any, op: any) {
+        return [text, op.value + "%"];
+      },
+
+      // dataLabels: {
+      //   enabled: true,
+      //   style: {
+      //     fontSize: "12px",
+      //     fontWeight: "bold",
+      //     color: "#FEFEFE",
+      //   },
+      //   textAnchor: "middle",
+
+      //   formatter: function (text: any, op: any) {
+      //     return [text, op.value + "%"];
+      //   },
+      //   // offsetY: 0,
       // },
-      dataLabels: {
-        enabled: true,
-        style: {
-          fontSize: "12px",
-          fontWeight: "bold",
-          color: "#FEFEFE",
-        },
-        textAnchor: "middle",
 
-        formatter: function (text, op) {
-          return [text, op.value + "%"];
-        },
-        // offsetY: 0,
-      },
-
-      colors: ["#151b1e"],
       plotOptions: {
         treemap: {
           borderWidth: 2,
           borderRadius: 8,
           borderColor: "#151b1e",
-          // borderColor: "transparent !important",
+          backgroundColor: "#15151b1e1515",
           distributed: true,
           enableShades: false,
         },
-        // treemap: {
-        //   showMenu: false,
-        // enableShades: true,
-        // shadeIntensity: 0.2,
-        // reverseNegativeShade: true,
-        // color: {
-        //   ranges: [
-        //     {
-        //       from: -6,
-        //       to: 0,
-        //       color: "#151b1e",
-        //     },
-        //     {
-        //       from: 0.001,
-        //       to: 6,
-        //       color: "#151b1e",
-        //     },
-        //   ],
-        // },
-        // },
       },
     },
   };
@@ -140,7 +113,7 @@ const PortfolioStats = () => {
         series={chartdata.series}
         type="treemap"
         height={259}
-        width={screenSize.width > 640 ? 500 : 300}
+        width={screenSize.width > 640 ? 535 : 300}
       />
     </div>
   );

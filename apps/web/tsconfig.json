@@ -26,7 +26,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "views/portfolio/PortfolioStats.jsx"
+    "views/portfolio/PortfolioStats.tsx"
   ],
   "exclude": ["node_modules"]
 }
