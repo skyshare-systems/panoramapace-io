@@ -28,43 +28,31 @@ const DCAStats = () => {
         data: [
           {
             x: "23 Mar",
-            y: 51.09,
+            y: 205,
           },
           {
             x: "24 Mar",
-            y: 16.07,
+            y: 215,
           },
           {
             x: "25 Mar",
-            y: 3.24,
+            y: 200,
           },
           {
-            x: "XRP",
-            y: 1.31,
+            x: "26 Mar",
+            y: 206,
           },
           {
-            x: "BNB",
-            y: 3.34,
+            x: "27 Mar",
+            y: 197,
           },
           {
-            x: "USDT",
-            y: 4.17,
+            x: "28 Mar",
+            y: 213,
           },
           {
-            x: "OTHER",
-            y: 1.8,
-          },
-          {
-            x: "MEME",
-            y: 1.6,
-          },
-          {
-            x: "USDC",
-            y: 1.3,
-          },
-          {
-            x: "DOGE",
-            y: 1.07,
+            x: "29 Mar",
+            y: 220,
           },
         ],
       },
@@ -79,14 +67,7 @@ const DCAStats = () => {
         </h1>
         <SettingsIcon />
       </div>
-      {/* 
-    <ReactApexChart
-      options={chartdata.options}
-      series={chartdata.series}
-      type="treemap"
-      height={500}
-      width={588}
-    /> */}
+
       <Chart
         options={chartdata.options}
         series={chartdata.series}
@@ -94,15 +75,6 @@ const DCAStats = () => {
         height={259}
         width={screenSize.width > 640 ? 500 : 300}
       />
-      {/* 
-      <Image
-        src={"/assets/dca.png"}
-        alt={"dca"}
-        height={500}
-        width={588}
-        className="w-full max-w-[588px]"
-        unoptimized
-      /> */}
     </div>
   );
 };

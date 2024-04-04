@@ -3,6 +3,7 @@ import Filter from "./Filter";
 import DashboardStats from "./DashboardStats";
 import PortfolioStats from "./PortfolioStats";
 import DCAStats from "./DCAStats";
+import MyHolder from "./MyHolder";
 
 const PortfolioPage = () => {
   return (
@@ -17,6 +18,8 @@ const PortfolioPage = () => {
         <div className="flex flex-wrap gap-4 grow items-center">
           <PortfolioStats />
           <DCAStats />
+
+          <MyHolder />
         </div>
       </div>
     </div>
