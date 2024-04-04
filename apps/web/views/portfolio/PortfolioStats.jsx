@@ -1,11 +1,13 @@
 "use client";
 import SettingsIcon from "@/components/icons/settings";
+import useScreenSize from "@/hooks/useScreenSize";
 import { cn } from "@/lib/utils";
 import { aoenik_regular } from "@/public/fonts";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 const PortfolioStats = () => {
+  const screenSize = useScreenSize();
   const chartdata = {
     series: [
       {
@@ -138,7 +140,7 @@ const PortfolioStats = () => {
         series={chartdata.series}
         type="treemap"
         height={259}
-        width={524}
+        width={screenSize.width > 640 ? 500 : 300}
       />
     </div>
   );

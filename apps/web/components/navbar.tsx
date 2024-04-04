@@ -14,7 +14,7 @@ export const Navbar = () => {
         scrollPosition < 50 ? "bg-transparent py-8" : "bg-black-100 py-4"
       } fixed top-0 w-full flex justify-center items-center z-[99] duration-200`}
     >
-      <div className="flex flex-row justify-between items-center max-w-[1200px] grow">
+      <div className="flex flex-row justify-between items-center max-w-[1200px] grow px-4 xl:px-0">
         {/* Logo  */}
         <div className="flex items-center gap-2">
           <PanoramaLogo />

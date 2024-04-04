@@ -9,14 +9,14 @@ const DashboardPage = () => {
   return (
     <div className="flex justify-center items-center py-[5rem] relative">
       <CeilingBg className="absolute -top-[7rem] w-full -z-[1] opacity-40" />
-      <div className="flex flex-col max-w-[1200px] gap-16 grow items-start w-full">
+      <div className="flex flex-col max-w-[1200px] gap-16 grow items-start w-full px-4 xl:px-0">
         {/* Dashboard */}
         <div className="flex flex-col gap-8 items-start justify-start grow w-full">
           <div className="flex flex-col gap-2">
             <h1
               className={cn(
                 aoenik_regular.className,
-                "tyh3 lg:ty-h1 text-white-100 leading-none"
+                "ty-h3 lg:ty-h1 text-white-100 leading-none"
               )}
             >
               Dashboard

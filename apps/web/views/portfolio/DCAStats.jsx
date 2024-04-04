@@ -2,10 +2,12 @@ import SettingsIcon from "@/components/icons/settings";
 import { cn } from "@/lib/utils";
 import { aoenik_regular } from "@/public/fonts";
 import React from "react";
-import Image from "next/image";
 import Chart from "react-apexcharts";
+import useScreenSize from "@/hooks/useScreenSize";
 
 const DCAStats = () => {
+  const screenSize = useScreenSize();
+
   const chartdata = {
     options: {
       chart: {
@@ -18,22 +20,53 @@ const DCAStats = () => {
       stroke: {
         curve: "smooth",
       },
-      xaxis: {
-        categories: [
-          "23 Mar",
-          "24 Mar",
-          "25 Mar",
-          "26 Mar",
-          "27 Mar",
-          "28 Mar",
-          "29 Mar",
-        ],
-      },
     },
     series: [
       {
         name: "Sales",
-        data: [200, 215, 200, 205, 200, 195, 220],
+
+        data: [
+          {
+            x: "23 Mar",
+            y: 51.09,
+          },
+          {
+            x: "24 Mar",
+            y: 16.07,
+          },
+          {
+            x: "25 Mar",
+            y: 3.24,
+          },
+          {
+            x: "XRP",
+            y: 1.31,
+          },
+          {
+            x: "BNB",
+            y: 3.34,
+          },
+          {
+            x: "USDT",
+            y: 4.17,
+          },
+          {
+            x: "OTHER",
+            y: 1.8,
+          },
+          {
+            x: "MEME",
+            y: 1.6,
+          },
+          {
+            x: "USDC",
+            y: 1.3,
+          },
+          {
+            x: "DOGE",
+            y: 1.07,
+          },
+        ],
       },
     ],
   };
@@ -59,7 +92,7 @@ const DCAStats = () => {
         series={chartdata.series}
         type="line"
         height={259}
-        width={524}
+        width={screenSize.width > 640 ? 500 : 300}
       />
       {/* 
       <Image
