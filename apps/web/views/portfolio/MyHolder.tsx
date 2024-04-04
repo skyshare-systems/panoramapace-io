@@ -220,7 +220,7 @@ const MyHolder = () => {
     },
   ];
   return (
-    <div className="hidden md:flex flex-col grow items-center justify-center p-4 md:p-8 gap-4 md:gap-8 border border-white-8 bg-black-100 rounded-2xl">
+    <div className="hidden md:flex flex-col grow items-center justify-center p-4 md:p-8 gap-4 md:gap-8 border border-white-8 bg-black-100 rounded-2xl w-full">
       <div className="flex flex-wrap justify-between grow w-full items-center">
         <h1 className={cn(aoenik_regular.className, "ty-h5 text-white-100")}>
           My holdings

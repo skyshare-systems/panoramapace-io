@@ -69,7 +69,7 @@ const DCAStats = () => {
         series={chartdata.series}
         type="line"
         height={259}
-        width={screenSize.width > 640 ? 500 : 300}
+        width={screenSize.width > 640 ? 535 : 300}
       />
     </div>
   );

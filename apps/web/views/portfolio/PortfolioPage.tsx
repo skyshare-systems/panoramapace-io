@@ -17,7 +17,7 @@ const PortfolioPage = () => {
 
         <div className="flex flex-wrap gap-4 grow items-center">
           <PortfolioStats />
-          <DCAStats />
+          {/* <DCAStats /> */}
 
           <MyHolder />
         </div>
