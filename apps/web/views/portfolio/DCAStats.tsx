@@ -10,14 +10,13 @@ const DCAStats = () => {
 
   const chartdata = {
     options: {
+      stroke: {
+        curve: "straight",
+      },
       chart: {
+        // type: "line",
         toolbar: {
           show: false,
-        },
-
-        id: "chart2",
-        stroke: {
-          curve: "smooth",
         },
       },
     },
@@ -73,7 +72,7 @@ const DCAStats = () => {
         series={chartdata.series}
         type="line"
         height={259}
-        width={screenSize.width > 640 ? 535 : 300}
+        width={screenSize.width > 640 ? 500 : 300}
       />
     </div>
   );
