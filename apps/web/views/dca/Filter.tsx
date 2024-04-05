@@ -8,7 +8,6 @@ import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { aoenik_regular } from "@/public/fonts";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import ArrowUpRight from "@/components/icons/arrow-up-right";
 import EyeIcon from "@/components/icons/eye";
 
@@ -23,18 +22,6 @@ const Filter = () => {
     {
       name: "Philippine Peso",
       acronym: "php",
-    },
-  ];
-
-  const time = [
-    {
-      name: "7d",
-    },
-    {
-      name: "24h",
-    },
-    {
-      name: "4h",
     },
   ];
 
@@ -86,22 +73,6 @@ const Filter = () => {
           All Wallet
           <ArrowUpRight />
         </button>
-
-        <div className="flex flex-wrap items-center gap-2 rounded-lg border border-white-8 bg-black-100 self-stretch p-1">
-          {time.map((data, index) => {
-            return (
-              <button
-                key={index}
-                className={cn(
-                  aoenik_regular.className,
-                  "py-2 px-3 ty-title hover:bg-white-100 hover:text-black-100 text-white-50 rounded-lg self-stretch"
-                )}
-              >
-                {data.name}
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       <div className="">

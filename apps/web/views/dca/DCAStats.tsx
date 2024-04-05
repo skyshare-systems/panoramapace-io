@@ -1,6 +1,7 @@
 import React from "react";
-import Filter from "../portfolio/Filter";
-import MyHolder from "../portfolio/MyHolder";
+import Filter from "../dca/Filter";
+import ActiveInvestments from "./ActiveInvesments";
+import AutoInvest from "./AutoInvest";
 
 const DCAStats = () => {
   return (
@@ -9,7 +10,8 @@ const DCAStats = () => {
 
       <div className="flex flex-col gap-4 grow justify-start items-start">
         <div className="flex flex-wrap gap-4 grow items-center">
-          <MyHolder />
+          <ActiveInvestments />
+          <AutoInvest />
         </div>
       </div>
     </div>
