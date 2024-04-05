@@ -30,10 +30,10 @@
     @apply font-normal text-[14px] leading-[120%];
   }
   .ty-title {
-    @apply font-bold text-[16px] leading-[120%];
+    @apply font-bold text-[14px] leading-[120%];
   }
   .ty-subheading {
-    @apply font-normal text-[18px] leading-[120%];
+    @apply font-normal text-[20px] leading-[120%];
   }
   .ty-h6 {
     @apply font-bold text-[20px] leading-[120%];

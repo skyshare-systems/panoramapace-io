@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 const PortfolioStats = dynamic(() => import("./PortfolioStats"), {
   ssr: false,
 });
-const DCAStats = dynamic(() => import("./DCAStats"), { ssr: false });
+const DCAGraph = dynamic(() => import("./DCAGraph"), { ssr: false });
 
 const PortfolioPage = () => {
   return (
@@ -24,7 +24,7 @@ const PortfolioPage = () => {
 
         <div className="flex flex-wrap gap-4 grow items-center">
           <PortfolioStats />
-          <DCAStats />
+          <DCAGraph />
 
           <MyHolder />
         </div>
