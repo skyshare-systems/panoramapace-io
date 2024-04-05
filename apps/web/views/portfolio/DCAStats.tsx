@@ -1,11 +1,14 @@
 "use client";
 import SettingsIcon from "@/components/icons/settings";
+import { useScreenSize } from "@/hooks/useScreenSize";
 import { cn } from "@/lib/utils";
 import { aoenik_regular } from "@/public/fonts";
 import React from "react";
 import Chart from "react-apexcharts";
 
 const DCAStats = () => {
+  const { screenSize } = useScreenSize();
+
   const chartdata = {
     options: {
       chart: {
@@ -54,7 +57,7 @@ const DCAStats = () => {
   };
 
   return (
-    <div className="hidden md:flex flex-col justify-center items-center grow md:min-w-[588px] max-w-[588px] gap-4 md:gap-8 p-4 md:p-8 border border-white-8 bg-black-100 rounded-2xl">
+    <div className="flex flex-col justify-center items-center grow md:min-w-[588px] max-w-[588px] gap-4 md:gap-8 p-4 md:p-8 border border-white-8 bg-black-100 rounded-2xl">
       <div className="flex flex-wrap justify-between items-center grow w-full">
         <h1 className={cn(aoenik_regular.className, "ty-h5 text-white-100")}>
           DCA
@@ -68,7 +71,7 @@ const DCAStats = () => {
           series={chartdata.series}
           type="line"
           height={259}
-          width={535}
+          width={screenSize.width > 640 ? 535 : 300}
         />
       )}
     </div>
