@@ -1,9 +1,16 @@
 import React from "react";
 import Filter from "./Filter";
 import DashboardStats from "./DashboardStats";
-import PortfolioStats from "./PortfolioStats";
-import DCAStats from "./DCAStats";
+// import PortfolioStats from "./PortfolioStats";
+// import DCAStats from "./DCAStats";
+
 import MyHolder from "./MyHolder";
+import dynamic from "next/dynamic";
+
+const PortfolioStats = dynamic(() => import("./PortfolioStats"), {
+  ssr: false,
+});
+const DCAStats = dynamic(() => import("./DCAStats"), { ssr: false });
 
 const PortfolioPage = () => {
   return (
@@ -17,7 +24,7 @@ const PortfolioPage = () => {
 
         <div className="flex flex-wrap gap-4 grow items-center">
           <PortfolioStats />
-          {/* <DCAStats /> */}
+          <DCAStats />
 
           <MyHolder />
         </div>
