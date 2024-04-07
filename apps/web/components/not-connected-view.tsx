@@ -2,7 +2,8 @@ import React from "react";
 import LineBg from "./icons/bg-line";
 import { cn } from "@/lib/utils";
 import { aoenik_regular } from "@/public/fonts";
-import { ConnectWallet } from "./connect-wallet";
+// import { ConnectWallet } from "./connect-wallet";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const NotConnectedView = () => {
   return (
@@ -28,7 +29,8 @@ const NotConnectedView = () => {
             place
           </p>
         </div>
-        <ConnectWallet />
+        {/* <ConnectWallet /> */}
+        <WalletMultiButton />
       </div>
     </div>
   );

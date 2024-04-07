@@ -2,119 +2,104 @@ import React from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
 import { aoenik_regular } from "@/public/fonts";
-import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import SearchBar from "@/components/searchbar";
 
 const ActiveInvestments = () => {
-  const holdings = [
+  const investment = [
     {
       coin: (
         <>
-          <div className="flex flex-row items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="17"
-              viewBox="0 0 16 17"
-              fill="none"
-            >
-              <path
-                d="M15.7605 10.4281C14.6919 14.7138 10.3507 17.322 6.06401 16.2533C1.77906 15.1848 -0.829473 10.8438 0.23964 6.55838C1.30775 2.27218 5.64897 -0.336295 9.93442 0.732194C14.2209 1.80068 16.8292 6.14214 15.7605 10.4281Z"
-                fill="#F7931A"
-              />
-              <path
-                d="M11.5279 7.35311C11.6871 6.28862 10.8765 5.71637 9.76818 5.33463L10.1277 3.89264L9.24987 3.67389L8.89984 5.07788C8.66906 5.02038 8.43203 4.96613 8.19651 4.91238L8.54905 3.49914L7.6717 3.2804L7.31192 4.72188C7.1209 4.67838 6.93338 4.63539 6.75136 4.59014L6.75236 4.58563L5.54173 4.28338L5.30821 5.22087C5.30821 5.22087 5.95953 5.37012 5.94577 5.37937C6.30131 5.46812 6.36557 5.70337 6.35481 5.88987L5.94527 7.5326C5.96977 7.53885 6.00153 7.54785 6.03654 7.56185C6.00728 7.55461 5.97603 7.5466 5.94378 7.53885L5.36971 9.84008C5.3262 9.94808 5.21595 10.1101 4.96742 10.0486C4.97617 10.0613 4.32935 9.88933 4.32935 9.88933L3.89355 10.8941L5.03593 11.1788C5.24845 11.2321 5.45672 11.2878 5.66174 11.3403L5.29846 12.7988L6.1753 13.0176L6.53509 11.5746C6.77461 11.6396 7.00714 11.6996 7.23466 11.7561L6.87613 13.1923L7.75396 13.411L8.11725 11.9553C9.61416 12.2386 10.7398 12.1243 11.2136 10.7706C11.5954 9.68058 11.1946 9.05184 10.407 8.64185C10.9806 8.5096 11.4126 8.13235 11.5279 7.35311ZM9.52215 10.1653C9.25087 11.2553 7.41543 10.6661 6.82036 10.5183L7.30242 8.58609C7.89748 8.73459 9.80568 9.02859 9.52215 10.1653ZM9.79368 7.33735C9.54615 8.32884 8.01849 7.8251 7.52294 7.7016L7.95999 5.94912C8.45554 6.07262 10.0515 6.30311 9.79368 7.33735Z"
-                fill="white"
-              />
-            </svg>
+          <div className="flex items-center gap-2">
+            <Image
+              src={"/icons/arb-icon.png"}
+              alt={"arb"}
+              height={16}
+              width={16}
+            />
             <h1
               className={cn(
                 aoenik_regular.className,
                 "ty-title text-white-100"
               )}
             >
-              Bitcoin
+              Arbitrum
             </h1>
-            <p
-              className={cn(
-                aoenik_regular.className,
-                "ty-subtitle text-white-50 uppercase"
-              )}
-            >
-              btc
-            </p>
-          </div>
-        </>
-      ),
-      network: (
-        <>
-          <div className="flex flex-row gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="17"
-              viewBox="0 0 16 17"
-              fill="none"
-            >
-              <path
-                d="M15.7605 10.4281C14.6919 14.7138 10.3507 17.322 6.06401 16.2533C1.77906 15.1848 -0.829473 10.8438 0.23964 6.55838C1.30775 2.27218 5.64897 -0.336295 9.93442 0.732194C14.2209 1.80068 16.8292 6.14214 15.7605 10.4281Z"
-                fill="#F7931A"
-              />
-              <path
-                d="M11.5279 7.35311C11.6871 6.28862 10.8765 5.71637 9.76818 5.33463L10.1277 3.89264L9.24987 3.67389L8.89984 5.07788C8.66906 5.02038 8.43203 4.96613 8.19651 4.91238L8.54905 3.49914L7.6717 3.2804L7.31192 4.72188C7.1209 4.67838 6.93338 4.63539 6.75136 4.59014L6.75236 4.58563L5.54173 4.28338L5.30821 5.22087C5.30821 5.22087 5.95953 5.37012 5.94577 5.37937C6.30131 5.46812 6.36557 5.70337 6.35481 5.88987L5.94527 7.5326C5.96977 7.53885 6.00153 7.54785 6.03654 7.56185C6.00728 7.55461 5.97603 7.5466 5.94378 7.53885L5.36971 9.84008C5.3262 9.94808 5.21595 10.1101 4.96742 10.0486C4.97617 10.0613 4.32935 9.88933 4.32935 9.88933L3.89355 10.8941L5.03593 11.1788C5.24845 11.2321 5.45672 11.2878 5.66174 11.3403L5.29846 12.7988L6.1753 13.0176L6.53509 11.5746C6.77461 11.6396 7.00714 11.6996 7.23466 11.7561L6.87613 13.1923L7.75396 13.411L8.11725 11.9553C9.61416 12.2386 10.7398 12.1243 11.2136 10.7706C11.5954 9.68058 11.1946 9.05184 10.407 8.64185C10.9806 8.5096 11.4126 8.13235 11.5279 7.35311ZM9.52215 10.1653C9.25087 11.2553 7.41543 10.6661 6.82036 10.5183L7.30242 8.58609C7.89748 8.73459 9.80568 9.02859 9.52215 10.1653ZM9.79368 7.33735C9.54615 8.32884 8.01849 7.8251 7.52294 7.7016L7.95999 5.94912C8.45554 6.07262 10.0515 6.30311 9.79368 7.33735Z"
-                fill="white"
-              />
-            </svg>
+
             <h1
               className={cn(
                 aoenik_regular.className,
-                "ty-descriptions text-white-100"
+                "ty-subTitle text-white-50"
               )}
             >
-              Bitcoin
+              Arb
             </h1>
           </div>
         </>
       ),
-      price: 66_863.72,
-      volume: 42_356_087_820,
-      amount: (
+      amount: 10,
+      accumulated: (
         <>
-          <div className="flex flex-col">
-            <h1 className={cn(aoenik_regular.className, "text-white-100")}>
-              0.0011056
-            </h1>
-            <p className={cn(aoenik_regular.className, "text-white-50")}>
-              $ 73.92
-            </p>
-          </div>
+          <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+            <span className="text-white-100">1.48 </span>
+            <span className="text-white-50 uppercase">arb</span>
+          </h1>
+        </>
+      ),
+      totalValuation: (
+        <>
+          <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+            <span className="text-white-50">$ </span>
+            <span className="text-white-100">37.24</span>
+          </h1>
         </>
       ),
       pnl: (
         <>
-          <h1
-            className={cn(
-              aoenik_regular.className,
-              "text-green-100 ty-descriptions"
-            )}
-          >
-            + $2.55
-          </h1>
+          <div className="flex flex-wrap gap-2 items-center">
+            <h1
+              className={
+                (aoenik_regular.className, "text-green-100 ty-descriptions")
+              }
+            >
+              + 7.8%
+            </h1>
+            <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+              <span className="text-white-50">$ </span>
+              <span className="text-white-100">2.90</span>
+            </h1>
+          </div>
         </>
       ),
+      recurringCycle: (
+        <div className="flex flex-wrap gap-2 items-center">
+          <h1
+            className={
+              (aoenik_regular.className, "text-white-100 ty-descriptions")
+            }
+          >
+            Daily
+          </h1>
+          <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+            <span className="text-white-100">18:00</span>
+
+            <span className="text-white-50">PHT </span>
+          </h1>
+        </div>
+      ),
+      count: 3,
     },
     {
       coin: (
         <>
-          <div className="flex flex-row items-center gap-2">
+          <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -122,11 +107,12 @@ const ActiveInvestments = () => {
               viewBox="0 0 16 17"
               fill="none"
             >
-              <circle cx="8" cy="8.4928" r="8" fill="#C2A633" />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5.35445 12.6777H8.11637H8.11645C8.11645 12.6777 11.9999 13.0084 11.9999 8.56017C11.9999 4.28439 8.45357 4.29956 7.76818 4.30249C7.75213 4.30256 7.73765 4.30262 7.72483 4.30262H5.35438V8.03337H4.38086V8.9472H5.35445V12.6777ZM6.91016 5.85062H7.99982C8.40738 5.85062 10.4578 6.01729 10.4611 8.59028C10.4643 11.1326 8.39704 11.13 8.06447 11.1296C8.06046 11.1296 8.05671 11.1296 8.05321 11.1296H6.91016V8.94709H8.62451V8.03325H6.91016V5.85062Z"
+                d="M15.7605 10.4353C14.6919 14.721 10.3507 17.3292 6.06401 16.2605C1.77906 15.192 -0.829473 10.851 0.23964 6.56559C1.30775 2.27938 5.64897 -0.329093 9.93442 0.739397C14.2209 1.80789 16.8292 6.14934 15.7605 10.4353Z"
+                fill="#F7931A"
+              />
+              <path
+                d="M11.5274 7.36031C11.6866 6.29582 10.8761 5.72358 9.76769 5.34183L10.1272 3.89984L9.24939 3.6811L8.89935 5.08508C8.66858 5.02758 8.43155 4.97333 8.19602 4.91959L8.54856 3.50635L7.67122 3.2876L7.31143 4.72908C7.12041 4.68558 6.93289 4.64259 6.75087 4.59734L6.75187 4.59284L5.54124 4.29059L5.30772 5.22808C5.30772 5.22808 5.95904 5.37733 5.94529 5.38658C6.30082 5.47533 6.36508 5.71057 6.35433 5.89707L5.94478 7.53981C5.96929 7.54606 6.00104 7.55506 6.03605 7.56906C6.00679 7.56181 5.97554 7.5538 5.94329 7.54605L5.36922 9.84729C5.32572 9.95529 5.21546 10.1173 4.96693 10.0558C4.97568 10.0685 4.32887 9.89653 4.32887 9.89653L3.89307 10.9013L5.03544 11.186C5.24796 11.2393 5.45623 11.295 5.66125 11.3475L5.29797 12.806L6.17481 13.0248L6.5346 11.5818C6.77412 11.6468 7.00665 11.7068 7.23417 11.7633L6.87564 13.1995L7.75348 13.4183L8.11677 11.9625C9.61367 12.2458 10.7393 12.1315 11.2131 10.7778C11.5949 9.68778 11.1941 9.05904 10.4065 8.64905C10.9801 8.5168 11.4121 8.13955 11.5274 7.36031ZM9.52166 10.1725C9.25038 11.2625 7.41494 10.6733 6.81988 10.5255L7.30193 8.59329C7.89699 8.74179 9.80519 9.03579 9.52166 10.1725ZM9.79319 7.34456C9.54566 8.33605 8.018 7.8323 7.52245 7.7088L7.9595 5.95633C8.45505 6.07982 10.051 6.31032 9.79319 7.34456Z"
                 fill="white"
               />
             </svg>
@@ -136,74 +122,71 @@ const ActiveInvestments = () => {
                 "ty-title text-white-100"
               )}
             >
-              Dogecoin
+              Bitcoin
             </h1>
-            <p
-              className={cn(
-                aoenik_regular.className,
-                "ty-subtitle text-white-50 uppercase"
-              )}
-            >
-              DOGE
-            </p>
-          </div>
-        </>
-      ),
-      network: (
-        <>
-          <div className="flex flex-row gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="17"
-              viewBox="0 0 16 17"
-              fill="none"
-            >
-              <circle cx="8" cy="8.4928" r="8" fill="#C2A633" />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5.35445 12.6777H8.11637H8.11645C8.11645 12.6777 11.9999 13.0084 11.9999 8.56017C11.9999 4.28439 8.45357 4.29956 7.76818 4.30249C7.75213 4.30256 7.73765 4.30262 7.72483 4.30262H5.35438V8.03337H4.38086V8.9472H5.35445V12.6777ZM6.91016 5.85062H7.99982C8.40738 5.85062 10.4578 6.01729 10.4611 8.59028C10.4643 11.1326 8.39704 11.13 8.06447 11.1296C8.06046 11.1296 8.05671 11.1296 8.05321 11.1296H6.91016V8.94709H8.62451V8.03325H6.91016V5.85062Z"
-                fill="white"
-              />
-            </svg>
+
             <h1
               className={cn(
                 aoenik_regular.className,
-                "ty-descriptions text-white-100"
+                "ty-subTitle text-white-50"
               )}
             >
-              Dogecoin
+              BTC
             </h1>
           </div>
         </>
       ),
-      price: 0.1897,
-      volume: 3_738_006_688,
-      amount: (
+      amount: 25,
+      accumulated: (
         <>
-          <div className="flex flex-col">
-            <h1 className={cn(aoenik_regular.className, "text-white-100 ")}>
-              399.27
-            </h1>
-            <p className={cn(aoenik_regular.className, "text-white-50")}>
-              $ 75.74
-            </p>
-          </div>
+          <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+            <span className="text-white-100">0.0043 </span>
+            <span className="text-white-50 uppercase">btc</span>
+          </h1>
+        </>
+      ),
+      totalValuation: (
+        <>
+          <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+            <span className="text-white-50">$ </span>
+            <span className="text-white-100">78.40</span>
+          </h1>
         </>
       ),
       pnl: (
         <>
-          <h1
-            className={cn(
-              aoenik_regular.className,
-              "text-red-100 ty-descriptions"
-            )}
-          >
-            - $3.23
-          </h1>
+          <div className="flex flex-wrap gap-2 items-center">
+            <h1
+              className={
+                (aoenik_regular.className, "text-green-100 ty-descriptions")
+              }
+            >
+              + 4.2%
+            </h1>
+            <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+              <span className="text-white-50">$ </span>
+              <span className="text-white-100">3.29</span>
+            </h1>
+          </div>
         </>
       ),
+      recurringCycle: (
+        <div className="flex flex-wrap gap-2 items-center">
+          <h1
+            className={
+              (aoenik_regular.className, "text-white-100 ty-descriptions")
+            }
+          >
+            Weekly
+          </h1>
+          <h1 className={cn(aoenik_regular.className, "ty-descriptions")}>
+            <span className="text-white-100">18:00</span>
+
+            <span className="text-white-50">PHT </span>
+          </h1>
+        </div>
+      ),
+      count: 3,
     },
   ];
 
@@ -223,6 +206,8 @@ const ActiveInvestments = () => {
         >
           Active investments
         </h1>
+
+        <SearchBar />
 
         {/* <DropdownMenu>
           <DropdownMenuTrigger
@@ -271,24 +256,97 @@ const ActiveInvestments = () => {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Coin</TableHead>
-            <TableHead>Network</TableHead>
-            <TableHead className="text-right">Price</TableHead>
-            <TableHead className="text-right">Volume</TableHead>
             <TableHead className="text-right">Amount</TableHead>
-            <TableHead className="text-right">Today’s PNL %</TableHead>
+            <TableHead className="text-right">Accumulated</TableHead>
+            <TableHead className="text-right">Total Valuation</TableHead>
+            <TableHead className="text-right">Unrealized PNL</TableHead>
+            <TableHead className="text-right">Recurring Cycle</TableHead>
+            <TableHead className="text-right">Count</TableHead>
+            <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {holdings.map((data, index) => (
+          {investment.map((data, index) => (
             <TableRow key={index}>
               {/* <TableCell className="font-medium">{data.coin}</TableCell> */}
               <TableCell>{data.coin}</TableCell>
-              <TableCell>{data.network}</TableCell>
-              <TableCell className="text-right">${data.price}</TableCell>
-              <TableCell className="text-right">${data.volume}</TableCell>
               <TableCell className="text-right">{data.amount}</TableCell>
+              <TableCell className="text-right">{data.accumulated}</TableCell>
+              <TableCell className="text-right">
+                {data.totalValuation}
+              </TableCell>
               <TableCell className="text-right">{data.pnl}</TableCell>
-              {/* <TableCell className="text-right">{data.coin}</TableCell> */}
+              <TableCell className="text-right">
+                {data.recurringCycle}
+              </TableCell>
+              <TableCell className="text-right">{data.count}</TableCell>
+              <TableCell className="text-right flex gap-2 items-center justify-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.666504 14.5C0.666504 14.1318 0.964984 13.8334 1.33317 13.8334H14.6665C15.0347 13.8334 15.3332 14.1318 15.3332 14.5C15.3332 14.8682 15.0347 15.1667 14.6665 15.1667H1.33317C0.964984 15.1667 0.666504 14.8682 0.666504 14.5Z"
+                    fill="#FEFEFE"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.66667 13.1667C2.29848 13.1667 2 12.8682 2 12.5V10.5C2 10.1318 2.29848 9.83337 2.66667 9.83337C3.03485 9.83337 3.33333 10.1318 3.33333 10.5V12.5C3.33333 12.8682 3.03485 13.1667 2.66667 13.1667Z"
+                    fill="#FEFEFE"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.33317 10.5C4.96498 10.5 4.6665 10.2016 4.6665 9.83337V6.50004C4.6665 6.13185 4.96498 5.83337 5.33317 5.83337C5.70136 5.83337 5.99984 6.13185 5.99984 6.50004V9.83337C5.99984 10.2016 5.70136 10.5 5.33317 10.5Z"
+                    fill="#FEFEFE"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.00016 8.50004C7.63196 8.50004 7.3335 8.20157 7.3335 7.83337V6.50004C7.3335 6.13185 7.63196 5.83337 8.00016 5.83337C8.36836 5.83337 8.66683 6.13185 8.66683 6.50004V7.83337C8.66683 8.20157 8.36836 8.50004 8.00016 8.50004Z"
+                    fill="#FEFEFE"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.6667 8.49996C10.2985 8.49996 10 8.20149 10 7.83329V3.83329C10 3.4651 10.2985 3.16663 10.6667 3.16663C11.0349 3.16663 11.3333 3.4651 11.3333 3.83329V7.83329C11.3333 8.20149 11.0349 8.49996 10.6667 8.49996Z"
+                    fill="#FEFEFE"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.3332 4.50004C12.965 4.50004 12.6665 4.20156 12.6665 3.83337V2.50004C12.6665 2.13185 12.965 1.83337 13.3332 1.83337C13.7014 1.83337 13.9998 2.13185 13.9998 2.50004V3.83337C13.9998 4.20156 13.7014 4.50004 13.3332 4.50004Z"
+                    fill="#FEFEFE"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="17"
+                  viewBox="0 0 16 17"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.5412 1.78702C10.6456 1.66661 9.49844 1.66662 8.03797 1.66663H7.9617C6.50125 1.66662 5.35413 1.66661 4.45852 1.78702C3.54075 1.91041 2.81258 2.16844 2.24044 2.74057C1.66832 3.3127 1.41029 4.04087 1.2869 4.95864C1.16649 5.85425 1.1665 7.00137 1.1665 8.46183V8.53809C1.1665 9.99856 1.16649 11.1457 1.2869 12.0413C1.41029 12.959 1.66832 13.6872 2.24044 14.2594C2.81258 14.8315 3.54075 15.0895 4.45852 15.2129C5.35413 15.3333 6.50124 15.3333 7.9617 15.3333H8.03797C9.49844 15.3333 10.6456 15.3333 11.5412 15.2129C12.4589 15.0895 13.1871 14.8315 13.7592 14.2594C14.3314 13.6872 14.5894 12.959 14.7128 12.0413C14.8332 11.1457 14.8332 9.99856 14.8332 8.53809V8.46183C14.8332 7.00136 14.8332 5.85425 14.7128 4.95864C14.5894 4.04087 14.3314 3.3127 13.7592 2.74057C13.1871 2.16844 12.4589 1.91041 11.5412 1.78702ZM8.6665 5.83329C8.6665 5.46511 8.36804 5.16663 7.99984 5.16663C7.63164 5.16663 7.33317 5.46511 7.33317 5.83329V7.83329H5.33317C4.96498 7.83329 4.6665 8.13176 4.6665 8.49996C4.6665 8.86816 4.96498 9.16663 5.33317 9.16663H7.33317V11.1666C7.33317 11.5348 7.63164 11.8333 7.99984 11.8333C8.36804 11.8333 8.6665 11.5348 8.6665 11.1666V9.16663H10.6665C11.0347 9.16663 11.3332 8.86816 11.3332 8.49996C11.3332 8.13176 11.0347 7.83329 10.6665 7.83329H8.6665V5.83329Z"
+                    fill="#FEFEFE"
+                  />
+                </svg>
+                <Image
+                  src={"/icons/bitcoin-withdraw.png"}
+                  alt={"withdraw"}
+                  height={16}
+                  width={16}
+                  unoptimized
+                />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

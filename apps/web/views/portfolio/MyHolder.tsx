@@ -230,7 +230,7 @@ const MyHolder = () => {
           <DropdownMenuTrigger
             className={cn(
               aoenik_regular.className,
-              "py-3 px-4 flex items-center gap-2 outline-none ty-title backdrop-blur-[8px] border border-white-16 rounded-lg uppercase text-white-100"
+              "py-3 px-4 flex items-center gap-2 outline-none ty-title backdrop-blur-[8px] border border-white-16 rounded-lg text-white-100"
             )}
           >
             All Wallet{" "}

@@ -4,6 +4,7 @@ import "./globals.css";
 import WagmiProviders from "@/components/providers/wagmi-providers";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
+import SolanaProvider from "@/components/providers/solana-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <WagmiProviders>
+        {/* <WagmiProviders> */}
+        <SolanaProvider>
           <Navbar />
           {children}
           <Footer />
-        </WagmiProviders>
+        </SolanaProvider>
+        {/* </WagmiProviders> */}
       </body>
     </html>
   );

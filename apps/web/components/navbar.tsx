@@ -2,12 +2,12 @@
 import React from "react";
 import PanoramaLogo from "./icons/panorama-logo";
 import PanoramaText from "./icons/panorama-text";
-import { ConnectWallet } from "./connect-wallet";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import Link from "next/link";
 import { aoenik_regular } from "@/public/fonts";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export const Navbar = () => {
   const { scrollPosition } = useScrollPosition();
@@ -54,7 +54,8 @@ export const Navbar = () => {
         </div>
 
         {/* Connect Wallet */}
-        <ConnectWallet />
+        {/* <ConnectWallet /> */}
+        <WalletMultiButton />
       </div>
     </div>
   );
