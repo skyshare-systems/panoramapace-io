@@ -26,22 +26,23 @@ const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className={`flex flex-row items-center justify-center ${isOpen ? "gap-1" : ""}  h-[44px]  rounded-xl border border-white-16 duration-200`}
+      className={`flex flex-row items-center justify-center gap-2  h-[44px] px-5  rounded-xl border border-white-16 duration-200`}
     >
-      <button
+      {/* <button
         onClick={() => setIsOpen((isOpen) => !isOpen)}
         className=" w-full h-full p-4"
       >
-        <SearchIcon />
-      </button>
-      <motion.div animate={isOpen ? "open" : "closed"} variants={variants}>
-        <input
-          type="text"
-          id="fname"
-          name="fname"
-          className="outline-none bg-transparent text-white-100"
-        />
-      </motion.div>
+    */}
+      {/* </button> */}
+      {/* <motion.div animate={isOpen ? "open" : "closed"} variants={variants}> */}
+      <SearchIcon />
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        className="outline-none bg-transparent text-white-100"
+      />
+      {/* </motion.div> */}
     </div>
   );
 };
