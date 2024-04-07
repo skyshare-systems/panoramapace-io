@@ -8,11 +8,14 @@ import CopyIcon from "@/components/icons/copy-icon";
 import ArrowUpRight from "@/components/icons/arrow-up-right";
 import AddWalletIcon from "@/components/icons/add-wallet";
 import { useWallet } from "@solana/wallet-adapter-react";
+import * as web3 from "@solana/web3.js";
 
 const ListWallet = () => {
   const wallet = useWallet();
-
+  const [balance, setBalance] = useState<number | null>(0);
   const [copyAddress, setCopyAddress] = useState("");
+
+  const endpoint = web3.clusterApiUrl("devnet");
 
   // const wallet = [
   //   {
