@@ -83,7 +83,7 @@ const Filter = () => {
             "ty-title text-white-100 p-3 pl-4 flex items-center gap-2 rounded-lg button-gray-gradient"
           )}
         >
-          All Wallet
+          All Wallet and Exchanges
           <ArrowUpRight />
         </button>
 

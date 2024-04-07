@@ -196,7 +196,7 @@ const ActiveInvestments = () => {
     },
   ];
   return (
-    <div className="hidden md:flex flex-col grow items-center justify-center p-4 md:p-8 gap-4 md:gap-8 border border-white-8 bg-black-100 rounded-2xl w-full md:min-w-[768px] lg:min-w-[1024px] xl:min-w-[1200px]">
+    <div className="hidden md:flex flex-col grow items-center justify-center p-4 md:p-8 gap-4 md:gap-8 border border-white-8 bg-black-100 rounded-2xl self-stretch lg:max-w-[1200px]">
       <div className="flex flex-wrap justify-between grow w-full items-center">
         <h1
           className={cn(
@@ -208,49 +208,6 @@ const ActiveInvestments = () => {
         </h1>
 
         <SearchBar />
-
-        {/* <DropdownMenu>
-          <DropdownMenuTrigger
-            className={cn(
-              aoenik_regular.className,
-              "py-3 px-4 flex items-center gap-2 outline-none ty-title backdrop-blur-[8px] border border-white-16 rounded-lg uppercase text-white-100"
-            )}
-          >
-            All Wallet{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="13"
-              viewBox="0 0 12 13"
-              fill="none"
-            >
-              <path
-                d="M9 4.99282C9 4.99282 6.79055 7.9928 6 7.9928C5.2094 7.9928 3 4.9928 3 4.9928"
-                stroke="#FEFEFE"
-                stroke-width="0.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="outline-none p-2 pb-3 border border-white-16 bg-black-100 rounded-xl">
-            {dropdownlist.map((data, index) => (
-              <DropdownMenuItem
-                key={index}
-                // onClick={() => setSelectedToken(data.acronym)}
-                className="flex justify-between  p-2 items-center gap-2 rounded-[8px] hover:bg-white-4 backdrop-blur-md cursor-pointer"
-              >
-                <h1
-                  className={
-                    (aoenik_regular.className, "ty-title text-white-100")
-                  }
-                >
-                  {data.name}
-                </h1>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu> */}
       </div>
       <Table className="text-white-100">
         <TableHeader>

@@ -1,21 +1,24 @@
-import EditIcon from "@/components/icons/edit-icon";
-import XIcon from "@/components/icons/x-icon";
 import { cn, shortenAddress } from "@/lib/utils";
 import { aoenik_regular } from "@/public/fonts";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import CopyIcon from "@/components/icons/copy-icon";
-import ArrowUpRight from "@/components/icons/arrow-up-right";
-import AddWalletIcon from "@/components/icons/add-wallet";
-import { useWallet } from "@solana/wallet-adapter-react";
+
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import * as web3 from "@solana/web3.js";
+import * as walletAdapterWallets from "@solana/wallet-adapter-wallets";
+import * as walletAdapterReact from "@solana/wallet-adapter-react";
+import EditIcon from "@/components/icons/edit-icon";
+import XIcon from "@/components/icons/x-icon";
+import AddWalletIcon from "@/components/icons/add-wallet";
 
 const ListWallet = () => {
-  const wallet = useWallet();
-  const [balance, setBalance] = useState<number | null>(0);
-  const [copyAddress, setCopyAddress] = useState("");
+  // const wallet = useWallet();
+  // const { connection } = useConnection();
 
-  const endpoint = web3.clusterApiUrl("devnet");
+  // const [copyAddress, setCopyAddress] = useState("");
+
+  const { publicKey } = useWallet();
 
   // const wallet = [
   //   {
@@ -39,6 +42,7 @@ const ListWallet = () => {
   //     network: "sol",
   //   },
   // ];
+
   return (
     <div className="flex flex-wrap items-center gap-2">
       {/* {wallet.map((data, index) => {
@@ -54,23 +58,14 @@ const ListWallet = () => {
             Wallet 1
           </h1>
 
-          <button
-            onClick={() => {
-              navigator.clipboard.writeText(String(wallet.publicKey?.toJSON()));
-            }}
-            className="hover:scale-125 active:scale-95 duration-200 hover:opacity-100 opacity-50"
-          >
-            <CopyIcon />
-          </button>
-
-          {/* <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <button className="hover:scale-125 active:scale-95 duration-200 hover:opacity-100 opacity-50">
               <EditIcon />
             </button>
             <button className="hover:scale-125 active:scale-95 duration-200 hover:opacity-100 opacity-50">
               <XIcon />
             </button>
-          </div> */}
+          </div>
         </div>
 
         <div className="flex flex-row gap-2 items-start justify-start">
@@ -109,8 +104,17 @@ const ListWallet = () => {
               <p className={cn(aoenik_regular.className, "text-white-50")}>
                 {/* {data.address}{" "} */}
 
-                {String(shortenAddress(wallet.publicKey?.toJSON()))}
+                {String(shortenAddress(publicKey?.toJSON()))}
               </p>
+
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(String(publicKey?.toJSON()));
+                }}
+                className="hover:scale-125 active:scale-95 duration-200 hover:opacity-100 opacity-50"
+              >
+                <CopyIcon />
+              </button>
 
               {/* <button className="hover:scale-125 active:scale-95 duration-200 hover:opacity-100 opacity-50">
                 <ArrowUpRight />
@@ -119,14 +123,13 @@ const ListWallet = () => {
           </div>
         </div>
       </div>
-      {/* );
-      })} */}
-      {/* <div className="flex flex-col justify-center items-center gap-2 py-4 px-8 bg-black-100 border border-white-8 rounded-lg self-stretch">
+
+      <div className="flex flex-col justify-center items-center gap-2 py-4 px-8 bg-black-100 border border-white-8 rounded-lg self-stretch">
         <AddWalletIcon />
         <h1 className={cn(aoenik_regular.className, "ty-title text-white-100")}>
           Add wallet
         </h1>
-      </div> */}
+      </div>
     </div>
   );
 };

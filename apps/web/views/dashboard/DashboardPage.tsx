@@ -4,6 +4,7 @@ import { aoenik_regular } from "@/public/fonts";
 import React from "react";
 import ListWallet from "./ListWallet";
 import PortfolioPage from "../portfolio/PortfolioPage";
+import ListExchanges from "./ListExchanges";
 
 const DashboardPage = () => {
   return (
@@ -32,7 +33,28 @@ const DashboardPage = () => {
           </div>
 
           {/* Add Wallet  */}
-          <ListWallet />
+          <div className="flex flex-col gap-2 p-2 rounded-2xl border-[0.7px] backdrop-blur-lg border-white-8 bg-black-100 grow self-stretch">
+            <h1
+              className={cn(
+                aoenik_regular.className,
+                "ty-subtext text-white-50 pb-0 p-2"
+              )}
+            >
+              Wallets
+            </h1>
+            <ListWallet />
+          </div>
+          <div className="flex flex-col gap-2 p-2 rounded-2xl border-[0.7px] backdrop-blur-lg border-white-8 bg-black-100 grow self-stretch">
+            <h1
+              className={cn(
+                aoenik_regular.className,
+                "ty-subtext text-white-50 pb-0 p-2"
+              )}
+            >
+              Exchanges
+            </h1>
+            <ListExchanges />
+          </div>
         </div>
         {/* Portfolio */}
         <PortfolioPage />

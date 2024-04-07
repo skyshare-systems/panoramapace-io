@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import NonCryptoAssets from "./NonCryptoAssets";
 
 const MyHolder = () => {
   const holdings = [
@@ -220,82 +221,124 @@ const MyHolder = () => {
     },
   ];
   return (
-    <div className="hidden md:flex flex-col grow items-center justify-center p-4 md:p-8 gap-4 md:gap-8 border border-white-8 bg-black-100 rounded-2xl w-full md:min-w-[768px] lg:min-w-[1024px] xl:min-w-[1200px]">
+    <>
       <div className="flex flex-wrap justify-between grow w-full items-center">
-        <h1 className={cn(aoenik_regular.className, "ty-h5 text-white-100")}>
-          My holdings
-        </h1>
+        <div className="flex flex-wrap items-center gap-4">
+          <h1 className={cn(aoenik_regular.className, "ty-h5 text-white-100")}>
+            My holdings
+          </h1>
 
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            className={cn(
-              aoenik_regular.className,
-              "py-3 px-4 flex items-center gap-2 outline-none ty-title backdrop-blur-[8px] border border-white-16 rounded-lg text-white-100"
-            )}
-          >
-            All Wallet{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="13"
-              viewBox="0 0 12 13"
-              fill="none"
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                aoenik_regular.className,
+                "py-2 px-3 flex items-center gap-2 outline-none ty-title backdrop-blur-[8px] border border-white-16 rounded-lg text-white-100"
+              )}
             >
-              <path
-                d="M9 4.99282C9 4.99282 6.79055 7.9928 6 7.9928C5.2094 7.9928 3 4.9928 3 4.9928"
-                stroke="#FEFEFE"
-                stroke-width="0.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="outline-none p-2 pb-3 border border-white-16 bg-black-100 rounded-xl">
-            {dropdownlist.map((data, index) => (
-              <DropdownMenuItem
-                key={index}
-                // onClick={() => setSelectedToken(data.acronym)}
-                className="flex justify-between  p-2 items-center gap-2 rounded-[8px] hover:bg-white-4 backdrop-blur-md cursor-pointer"
+              All Wallet{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="13"
+                viewBox="0 0 12 13"
+                fill="none"
               >
-                <h1
-                  className={
-                    (aoenik_regular.className, "ty-title text-white-100")
-                  }
+                <path
+                  d="M9 4.99282C9 4.99282 6.79055 7.9928 6 7.9928C5.2094 7.9928 3 4.9928 3 4.9928"
+                  stroke="#FEFEFE"
+                  stroke-width="0.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="outline-none p-2 pb-3 border border-white-16 bg-black-100 rounded-xl">
+              {dropdownlist.map((data, index) => (
+                <DropdownMenuItem
+                  key={index}
+                  // onClick={() => setSelectedToken(data.acronym)}
+                  className="flex justify-between  p-2 items-center gap-2 rounded-[8px] hover:bg-white-4 backdrop-blur-md cursor-pointer"
                 >
-                  {data.name}
-                </h1>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+                  <h1
+                    className={
+                      (aoenik_regular.className, "ty-title text-white-100")
+                    }
+                  >
+                    {data.name}
+                  </h1>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+        <button
+          className={cn(
+            aoenik_regular.className,
+            "ty-title bg-white-100 text-black-100 rounded-lg flex items-center gap-2 py-3 px-4"
+          )}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+          >
+            <path
+              d="M8 3.15948V13.8262"
+              stroke="#0B1215"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2.6665 8.4928H13.3332"
+              stroke="#0B1215"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Add a holding
+        </button>
       </div>
-      <Table className="text-white-100">
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">Coin</TableHead>
-            <TableHead>Network</TableHead>
-            <TableHead className="text-right">Price</TableHead>
-            <TableHead className="text-right">Volume</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
-            <TableHead className="text-right">Today’s PNL %</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {holdings.map((data, index) => (
-            <TableRow key={index}>
-              {/* <TableCell className="font-medium">{data.coin}</TableCell> */}
-              <TableCell>{data.coin}</TableCell>
-              <TableCell>{data.network}</TableCell>
-              <TableCell className="text-right">${data.price}</TableCell>
-              <TableCell className="text-right">${data.volume}</TableCell>
-              <TableCell className="text-right">{data.amount}</TableCell>
-              <TableCell className="text-right">{data.pnl}</TableCell>
-              {/* <TableCell className="text-right">{data.coin}</TableCell> */}
+      <div className="flex flex-col grow items-start justify-start w-full">
+        <h1
+          className={cn(
+            aoenik_regular.className,
+            "ty-subheading text-white-50 py-3"
+          )}
+        >
+          Cryptocurrency Assets
+        </h1>
+        <Table className="text-white-100">
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[100px]">Coin</TableHead>
+              <TableHead>Network</TableHead>
+              <TableHead className="text-right">Price</TableHead>
+              <TableHead className="text-right">Volume</TableHead>
+              <TableHead className="text-right">Amount</TableHead>
+              <TableHead className="text-right">Today’s PNL %</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+          </TableHeader>
+          <TableBody>
+            {holdings.map((data, index) => (
+              <TableRow key={index}>
+                {/* <TableCell className="font-medium">{data.coin}</TableCell> */}
+                <TableCell>{data.coin}</TableCell>
+                <TableCell>{data.network}</TableCell>
+                <TableCell className="text-right">${data.price}</TableCell>
+                <TableCell className="text-right">${data.volume}</TableCell>
+                <TableCell className="text-right">{data.amount}</TableCell>
+                <TableCell className="text-right">{data.pnl}</TableCell>
+                {/* <TableCell className="text-right">{data.coin}</TableCell> */}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    </>
   );
 };
 
