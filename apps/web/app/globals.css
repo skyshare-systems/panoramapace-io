@@ -70,3 +70,22 @@
   );
   backdrop-filter: blur(8px);
 }
+
+.wallet-adapter-button-trigger {
+  background: linear-gradient(180deg, #1d68f8 0%, #113d92 100%);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wallet-adapter-button-trigger:hover {
+  opacity: 0.5;
+}
+.wallet-adapter-button-trigger:active {
+  transform: scaleY(0.9);
+}
+
+.wallet-adapter-dropdown-list {
+  background: #0a1215;
+  border: 1px solid #fefefe14;
+}
