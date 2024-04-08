@@ -92,8 +92,8 @@ const MyHolder = () => {
           </div>
         </>
       ),
-      price: 66_863.72,
-      volume: 42_356_087_820,
+      price: "66,863.72",
+      volume: " 42,356,087,820",
       amount: (
         <>
           <div className="flex flex-col">
@@ -187,7 +187,7 @@ const MyHolder = () => {
         </>
       ),
       price: 0.1897,
-      volume: 3_738_006_688,
+      volume: "3,738,006,688",
       amount: (
         <>
           <div className="flex flex-col">
