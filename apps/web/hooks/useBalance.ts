@@ -5,7 +5,7 @@ import * as walletAdapterWallets from "@solana/wallet-adapter-wallets";
 import * as walletAdapterReact from "@solana/wallet-adapter-react";
 
 const useBalance = () => {
-  const [balance, setBalance] = useState<number | null>(0);
+  const [balance, setBalance] = useState<number>(0);
 
   const endpoint = web3.clusterApiUrl("devnet");
 

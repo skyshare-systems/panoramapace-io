@@ -54,9 +54,7 @@ const NonCryptoAssets = () => {
               <TableCell>{data.name}</TableCell>
               <TableCell>{data.description}</TableCell>
               <TableCell>{data.category}</TableCell>
-              <TableCell className="text-right">
-                ${data.estimateValue}
-              </TableCell>
+              <TableCell className="text-right">{data.estimateValue}</TableCell>
               <TableCell className="text-right flex justify-end gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

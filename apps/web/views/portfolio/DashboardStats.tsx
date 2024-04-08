@@ -61,7 +61,7 @@ const DashboardStats = () => {
 
             <h1 className={cn(aoenik_regular.className, "ty-h4 tracking-wide")}>
               <span className="text-white-50">$ </span>
-              <span className="text-white-100">{balance}</span>
+              <span className="text-white-100">{balance * 180 ?? 0}</span>
             </h1>
           </div>
           {portfolio.map((data, index) => {
