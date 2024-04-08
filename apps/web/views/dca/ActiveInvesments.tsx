@@ -216,8 +216,8 @@ const ActiveInvestments = () => {
             <TableHead className="text-right">Amount</TableHead>
             <TableHead className="text-right">Accumulated</TableHead>
             <TableHead className="text-right">Total Valuation</TableHead>
-            <TableHead className="text-right">Unrealized PNL</TableHead>
-            <TableHead className="text-right">Recurring Cycle</TableHead>
+            <TableHead className="">Unrealized PNL</TableHead>
+            <TableHead className="">Recurring Cycle</TableHead>
             <TableHead className="text-right">Count</TableHead>
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>
